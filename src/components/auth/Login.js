@@ -25,9 +25,15 @@ class Login extends Component {
     // this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/");
+      this.props.history.push("/dashboard");
     }
     if (nextProps.errors) {
       this.setState({ errrors: nextProps.errors });
@@ -60,7 +66,7 @@ class Login extends Component {
               <Label for="email" sm={2}>
                 E-Mail
               </Label>
-              <Col sm={4}>
+              <Col sm={10}>
                 <Input
                   type="email"
                   name="email"
@@ -75,7 +81,7 @@ class Login extends Component {
               <Label for="password" sm={2}>
                 Passwort
               </Label>
-              <Col sm={4}>
+              <Col sm={10}>
                 <Input
                   type="password"
                   name="password"
@@ -86,7 +92,7 @@ class Login extends Component {
                 />
               </Col>
             </FormGroup>
-            <Button color="primary" block>
+            <Button color="info" block>
               Login
             </Button>
             {""}
