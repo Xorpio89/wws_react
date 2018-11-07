@@ -22,8 +22,18 @@ import Umsatzauswertung from "./components/layout/Umsatzauswertung";
 import Warenerfassen from "./components/layout/Warenerfassen";
 import Example from "./components/layout/Example";
 
+// Styles Font Awesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faArrowCircleLeft,
+  faPrint,
+  faFilePdf
+} from "@fortawesome/free-solid-svg-icons";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
+library.add(faArrowCircleLeft, faPrint, faFilePdf);
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -53,11 +63,11 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Container>
               <Row>
-                <Switch>
-                  <div className="col-12 col-md-3 col-xl-3">
+                <div className="col-12 col-md-3 col-xl-3">
+                  <Switch>
                     <PrivateRoute component={Sidebar} />
-                  </div>
-                </Switch>
+                  </Switch>
+                </div>
                 <div className="col-12 col-md-9 col-xl-9">
                   <Switch>
                     <PrivateRoute

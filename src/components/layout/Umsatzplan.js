@@ -4,7 +4,7 @@ class Umsatzplan extends Component {
   render() {
     return (
       <div>
-        <h1 class="bd-title" id="umsatzplan">
+        <h1 className="bd-title" id="umsatzplan">
           Umsatzplan
         </h1>
       </div>

@@ -4,7 +4,7 @@ class Umsatzauswertung extends Component {
   render() {
     return (
       <div>
-        <h1 class="bd-title" id="Umsatzerfassen">
+        <h1 className="bd-title" id="Umsatzerfassen">
           Umsatzauswertung
         </h1>
       </div>
